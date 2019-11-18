@@ -7,18 +7,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class StudentAddAction
- */
+import com.nrk.sms.model.Student;
+
 @WebServlet("/student_add")
 public class StudentAddAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String name = request.getParameter("name");
+		String nic = request.getParameter("nic");
+		String email = request.getParameter("email");
+		String mobile = request.getParameter("mobile");
+		
+		Student s1 = new Student();
+		s1.name = name;
+		s1.nic = nic;
+		s1.email = email;
+		s1.mobile = mobile;
 	}
 
 }
